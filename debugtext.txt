@@ -1,0 +1,12 @@
+BUG REPORT
+
+1. The name of component FormWrapper was written as FromWrapper in FormInput Component and FormSelect Component
+2. The dropdown menu were overlapping the immediate element in FormSelect Component. Rectified by introducing MenuPortalTarget, MenuPosition on ReactSelect and the adjusting the custom styles for "option" where isFocused was used.
+3. The next button did not work in Job Section due to an extra validation which had to be removed
+4. There was a name error in HomeLayout Component where RequisitionForms was written instead of RequisitionDetailsForm.
+5. HomeLayout component had a DisplayCard component ,renamed it to PreviewCard as no such component existed
+6. Changed label from Job Location to Interview Language in InterViewSettingsForm Component
+
+
+
+The interview section has been validated
