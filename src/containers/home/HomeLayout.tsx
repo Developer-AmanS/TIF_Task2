@@ -20,7 +20,7 @@ import JobDetailsForm from "./JobDetailsForm";
 import RequisitionDetailsForm from "./RequisitionDetailsForm";
 // import DisplayCard from "./PreviewCard";
 
-import { IRequisitionDetails, IInterViewSettings, IJobDetails } from "../../interface/forms";
+// import { IRequisitionDetails, IInterViewSettings, IJobDetails } from "../../interface/forms";
 
 import { PageNumbers } from "../../interface/home";
 import PreviewCard from "./PreviewCard";
@@ -36,6 +36,8 @@ const CustomTab: React.FC<TabProps> = ({ children, ...props }) => {
 const HomeLayout = () => {
   const [page, setPage] = useState<PageNumbers>(0);
 
+  const {...state} = useData();
+ 
 
   const handlePage = (pageNumber: PageNumbers) => {
     setPage(pageNumber);
@@ -70,7 +72,7 @@ const HomeLayout = () => {
               </TabPanel>
             </TabPanels>
             {/* <DisplayCard /> */}
-            <PreviewCard   />
+            <PreviewCard requisitionDetails={state.state.requisitionDetails}  interviewSettings={state.state.interviewSettings} jobDetails={state.state.jobDetails}  />
           </Grid>
         </Tabs>
       </Container>

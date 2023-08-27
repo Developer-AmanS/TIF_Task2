@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Grid } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   IInterViewSettings,
   IJobDetails,
@@ -53,6 +53,12 @@ const PreviewCard: React.FC<{
   interviewSettings?: IInterViewSettings;
 }> = ({ requisitionDetails, jobDetails, interviewSettings }) => {
 
+
+  // useEffect(()=>{
+
+
+
+  // },[requisitionDetails,jobDetails,interviewSettings])
   
 
   return (

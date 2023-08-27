@@ -15,6 +15,12 @@ const RequisitionDetailsForm: React.FC<{
  
 }> = ({ handleTab}) => 
  { 
+  const { ...state} = useData();
+  // const { ...setState} = useData();
+
+  const [data, setData] = useState<IRequisitionDetails>();
+  
+
 
   const { 
     handleChange,
@@ -45,12 +51,27 @@ const RequisitionDetailsForm: React.FC<{
     }),
 
     onSubmit: (values) => {
+      
+      state.setState((prev) => ({
+        ...prev, requisitionDetails: values
+      }))
 
-    
       handleTab(1);
     },
   });
 
+ 
+
+
+  useEffect(()=>{
+  
+    state.setState((prev) =>( {
+      ...prev, requisitionDetails:values
+    }))
+
+  
+  },[state, values])
+  
 
   return (
 

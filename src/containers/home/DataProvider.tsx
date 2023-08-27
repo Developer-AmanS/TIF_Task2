@@ -26,10 +26,20 @@ const DataContext = createContext<{
 
 
 
-const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children,
+const DataProvider: React.FC<{ children: React.ReactNode }> = 
+({ 
+  
+  children,
 
 }) => {
   const [state, setState] = useState(initialValues);
+
+  // const updateFormData = (newData:any) =>{
+  //   setState((prevData)=>({
+  //     ...prevData,
+  //     ...newData
+  //   }))
+  // }
 
   return (
     <DataContext.Provider value={{ state, setState }}>
